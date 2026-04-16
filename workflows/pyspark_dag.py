@@ -10,26 +10,26 @@ from airflow.providers.google.cloud.operators.dataproc import (
 )
 
 # define the variables
-PROJECT_ID = "avd-databricks-demo"
-REGION = "us-east1"
+PROJECT_ID = "dataengineering-project-492505"
+REGION = "asia-south2"
 CLUSTER_NAME = "my-demo-cluster"
-COMPOSER_BUCKET = "us-central1-demo-instance-9e2e6451-bucket"
+COMPOSER_BUCKET = "bucket-dag-15042026"
 
-GCS_JOB_FILE_1 = f"gs://{COMPOSER_BUCKET}/data/INGESTION/retailerMysqlToLanding.py"
+GCS_JOB_FILE_1 = f"gs://{COMPOSER_BUCKET}/data/INGESTION/retailerMysqlToLandingOptimized.py"
 PYSPARK_JOB_1 = {
     "reference": {"project_id": PROJECT_ID},
     "placement": {"cluster_name": CLUSTER_NAME},
     "pyspark_job": {"main_python_file_uri": GCS_JOB_FILE_1},
 }
 
-GCS_JOB_FILE_2 = f"gs://{COMPOSER_BUCKET}/data/INGESTION/supplierMysqlToLanding.py"
+GCS_JOB_FILE_2 = f"gs://{COMPOSER_BUCKET}/data/INGESTION/supplierMysqlToLandingOptimized.py"
 PYSPARK_JOB_2 = {
     "reference": {"project_id": PROJECT_ID},
     "placement": {"cluster_name": CLUSTER_NAME},
     "pyspark_job": {"main_python_file_uri": GCS_JOB_FILE_2},
 }
 
-GCS_JOB_FILE_3 = f"gs://{COMPOSER_BUCKET}/data/INGESTION/customerReviews_API.py"
+GCS_JOB_FILE_3 = f"gs://{COMPOSER_BUCKET}/data/INGESTION/customerReviews_APIOptimized.py"
 PYSPARK_JOB_3 = {
     "reference": {"project_id": PROJECT_ID},
     "placement": {"cluster_name": CLUSTER_NAME},
@@ -38,7 +38,7 @@ PYSPARK_JOB_3 = {
 
 
 ARGS = {
-    "owner": "SHAIK SAIDHUL",
+    "owner": "AMIT GROVER",
     "start_date": None,
     "depends_on_past": False,
     "email_on_failure": False,
