@@ -13,7 +13,7 @@ from airflow.providers.google.cloud.operators.dataproc import (
 PROJECT_ID = "dataengineering-project-492505"
 REGION = "asia-south2"
 CLUSTER_NAME = "my-demo-cluster"
-COMPOSER_BUCKET = "bucket-dag-15042026"
+COMPOSER_BUCKET = "asia-south2-demo-instance-60c3ab0c-bucket"
 
 GCS_JOB_FILE_1 = f"gs://{COMPOSER_BUCKET}/data/INGESTION/retailerMysqlToLandingOptimized.py"
 PYSPARK_JOB_1 = {
